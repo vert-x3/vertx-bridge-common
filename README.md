@@ -1,0 +1,1 @@
+# vertx-bridge-common
