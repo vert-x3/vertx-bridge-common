@@ -26,7 +26,7 @@ Sets the list of outbound permitted options.
 == PermittedOptions
 
 ++++
- Specify a match to allow for inbound and outbound traffic.
+ Represents a match to allow for inbound and outbound traffic.
 ++++
 '''
 
