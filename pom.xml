@@ -7,7 +7,7 @@
   <parent>
     <groupId>io.vertx</groupId>
     <artifactId>vertx-ext-parent</artifactId>
-    <version>19</version>
+    <version>20</version>
   </parent>
 
   <artifactId>vertx-bridge-common</artifactId>
@@ -78,7 +78,7 @@
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.1.0</version>
+      <version>3.3.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
