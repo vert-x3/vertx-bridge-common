@@ -4,7 +4,6 @@
 == MyBridgeOptions
 
 ++++
- @author <a href="http://escoffier.me">Clement Escoffier</a>
 ++++
 '''
 
