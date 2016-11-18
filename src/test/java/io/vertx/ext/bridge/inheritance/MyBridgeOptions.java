@@ -3,9 +3,6 @@ package io.vertx.ext.bridge.inheritance;
 import io.vertx.codegen.annotations.DataObject;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.bridge.BridgeOptions;
-import io.vertx.ext.bridge.PermittedOptions;
-
-import java.util.List;
 
 /**
  * @author <a href="http://escoffier.me">Clement Escoffier</a>

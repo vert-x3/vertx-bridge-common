@@ -7,7 +7,7 @@
   <parent>
     <groupId>io.vertx</groupId>
     <artifactId>vertx-ext-parent</artifactId>
-    <version>20</version>
+    <version>23</version>
   </parent>
 
   <artifactId>vertx-bridge-common</artifactId>
@@ -41,6 +41,11 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-lang-groovy</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-lang-kotlin</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
@@ -86,18 +91,46 @@
   <build>
     <plugins>
       <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
+        <groupId>org.bsc.maven</groupId>
+        <artifactId>maven-processor-plugin</artifactId>
+        <version>3.2.0</version>
         <executions>
           <execution>
-            <id>default-testCompile</id>
+            <id>generate-test-sources</id>
+            <goals>
+              <goal>process-test</goal>
+            </goals>
+            <phase>generate-test-sources</phase>
             <configuration>
-              <annotationProcessors>
-                <annotationProcessor>io.vertx.codegen.CodeGenProcessor</annotationProcessor>
-              </annotationProcessors>
-              <generatedTestSourcesDirectory>${project.basedir}/src/test/generated</generatedTestSourcesDirectory>
-              <compilerArgs>
-                <arg>-AoutputDirectory=${project.basedir}/src/test</arg>
-              </compilerArgs>
+              <systemProperties>
+                <java.util.logging.SimpleFormatter.format>%4$s: %3$s - %5$s %6$s%n</java.util.logging.SimpleFormatter.format>
+              </systemProperties>
+              <processors>
+                <processor>io.vertx.codegen.CodeGenProcessor</processor>
+              </processors>
+              <optionMap>
+                <outputDirectory>${project.basedir}/src/test</outputDirectory>
+              </optionMap>
+              <defaultOutputDirectory>${project.build.directory}/generated-test-sources/annotations</defaultOutputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.12</version>
+        <executions>
+          <execution>
+            <id>add-test-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-test-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.basedir}/src/test/generated</source>
+              </sources>
             </configuration>
           </execution>
         </executions>

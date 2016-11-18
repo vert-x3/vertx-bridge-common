@@ -1,0 +1,4 @@
+moduleName = vertx-bridge-common-module
+moduleVersion = 1.0
+extensionClasses = io.vertx.groovy.ext.bridge.GroovyExtension
+staticExtensionClasses = io.vertx.groovy.ext.bridge.GroovyStaticExtension
