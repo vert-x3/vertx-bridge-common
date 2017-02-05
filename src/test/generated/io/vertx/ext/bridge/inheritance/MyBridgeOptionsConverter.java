@@ -47,18 +47,14 @@ public class MyBridgeOptionsConverter {
   public static void toJson(MyBridgeOptions obj, JsonObject json) {
     json.put("flag", obj.isFlag());
     if (obj.getInboundPermitteds() != null) {
-      json.put("inboundPermitteds", new JsonArray(
-          obj.getInboundPermitteds().
-              stream().
-              map(item -> item.toJson()).
-              collect(java.util.stream.Collectors.toList())));
+      JsonArray array = new JsonArray();
+      obj.getInboundPermitteds().forEach(item -> array.add(item.toJson()));
+      json.put("inboundPermitteds", array);
     }
     if (obj.getOutboundPermitteds() != null) {
-      json.put("outboundPermitteds", new JsonArray(
-          obj.getOutboundPermitteds().
-              stream().
-              map(item -> item.toJson()).
-              collect(java.util.stream.Collectors.toList())));
+      JsonArray array = new JsonArray();
+      obj.getOutboundPermitteds().forEach(item -> array.add(item.toJson()));
+      json.put("outboundPermitteds", array);
     }
   }
 }
