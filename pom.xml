@@ -7,7 +7,7 @@
   <parent>
     <groupId>io.vertx</groupId>
     <artifactId>vertx-ext-parent</artifactId>
-    <version>24</version>
+    <version>25</version>
   </parent>
 
   <artifactId>vertx-bridge-common</artifactId>
@@ -110,6 +110,7 @@
               </processors>
               <optionMap>
                 <outputDirectory>${project.basedir}/src/test</outputDirectory>
+                <codegen.output.data_object_converters>generated</codegen.output.data_object_converters>
               </optionMap>
               <defaultOutputDirectory>${project.build.directory}/generated-test-sources/annotations</defaultOutputDirectory>
             </configuration>
