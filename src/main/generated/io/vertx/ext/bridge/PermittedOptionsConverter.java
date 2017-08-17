@@ -36,6 +36,9 @@ public class PermittedOptionsConverter {
     if (json.getValue("match") instanceof JsonObject) {
       obj.setMatch(((JsonObject)json.getValue("match")).copy());
     }
+    if (json.getValue("requiredAuthority") instanceof String) {
+      obj.setRequiredAuthority((String)json.getValue("requiredAuthority"));
+    }
   }
 
   public static void toJson(PermittedOptions obj, JsonObject json) {
@@ -47,6 +50,9 @@ public class PermittedOptionsConverter {
     }
     if (obj.getMatch() != null) {
       json.put("match", obj.getMatch());
+    }
+    if (obj.getRequiredAuthority() != null) {
+      json.put("requiredAuthority", obj.getRequiredAuthority());
     }
   }
 }

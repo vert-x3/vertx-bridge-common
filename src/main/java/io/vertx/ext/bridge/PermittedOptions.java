@@ -43,8 +43,14 @@ public class PermittedOptions {
    */
   public static String DEFAULT_ADDRESS_REGEX = null;
 
+  /**
+   * The default permitted required authority : {@code null}.
+   */
+  public static String DEFAULT_REQUIRED_AUTHORITY = null;
+
   private String address = DEFAULT_ADDRESS;
   private String addressRegex = DEFAULT_ADDRESS_REGEX;
+  private String requiredAuthority = DEFAULT_REQUIRED_AUTHORITY;
   private JsonObject match = DEFAULT_MATCH;
 
   /**
@@ -62,6 +68,7 @@ public class PermittedOptions {
     address = that.address;
     addressRegex = that.addressRegex;
     match = that.match;
+    requiredAuthority = that.requiredAuthority;
   }
 
   /**
@@ -146,4 +153,18 @@ public class PermittedOptions {
     return this;
   }
 
+  public String getRequiredAuthority() {
+    return requiredAuthority;
+  }
+
+  /**
+   * Declare a specific authority that user must have in order to allow messages
+   *
+   * @param requiredAuthority the authority
+   * @return a reference to this, so the API can be used fluently
+   */
+  public PermittedOptions setRequiredAuthority(String requiredAuthority) {
+    this.requiredAuthority = requiredAuthority;
+    return this;
+  }
 }
