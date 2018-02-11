@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Red Hat, Inc.
+ * Copyright (c) 2014 Red Hat, Inc. and others
  *
  * Red Hat licenses this file to you under the Apache License, version 2.0
  * (the "License"); you may not use this file except in compliance with the
@@ -31,16 +31,20 @@ public class MyBridgeOptionsConverter {
       obj.setFlag((Boolean)json.getValue("flag"));
     }
     if (json.getValue("inboundPermitteds") instanceof JsonArray) {
-      json.getJsonArray("inboundPermitteds").forEach(item -> {
+      java.util.ArrayList<io.vertx.ext.bridge.PermittedOptions> list = new java.util.ArrayList<>();
+      json.getJsonArray("inboundPermitteds").forEach( item -> {
         if (item instanceof JsonObject)
-          obj.addInboundPermitted(new io.vertx.ext.bridge.PermittedOptions((JsonObject)item));
+          list.add(new io.vertx.ext.bridge.PermittedOptions((JsonObject)item));
       });
+      obj.setInboundPermitteds(list);
     }
     if (json.getValue("outboundPermitteds") instanceof JsonArray) {
-      json.getJsonArray("outboundPermitteds").forEach(item -> {
+      java.util.ArrayList<io.vertx.ext.bridge.PermittedOptions> list = new java.util.ArrayList<>();
+      json.getJsonArray("outboundPermitteds").forEach( item -> {
         if (item instanceof JsonObject)
-          obj.addOutboundPermitted(new io.vertx.ext.bridge.PermittedOptions((JsonObject)item));
+          list.add(new io.vertx.ext.bridge.PermittedOptions((JsonObject)item));
       });
+      obj.setOutboundPermitteds(list);
     }
   }
 
