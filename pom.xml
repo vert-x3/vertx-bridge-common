@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.vertx</groupId>
     <artifactId>vertx-ext-parent</artifactId>
-    <version>30</version>
+    <version>34</version>
   </parent>
 
   <artifactId>vertx-bridge-common</artifactId>
@@ -66,7 +66,6 @@
       <plugin>
         <groupId>org.bsc.maven</groupId>
         <artifactId>maven-processor-plugin</artifactId>
-        <version>3.2.0</version>
         <executions>
           <execution>
             <id>generate-test-sources</id>
@@ -93,7 +92,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.12</version>
         <executions>
           <execution>
             <id>add-test-source</id>
@@ -116,16 +114,8 @@
             <id>default-jar</id>
             <configuration>
               <archive>
-                <!-- Generate a jar INDEX.LIST -->
-                <index>true</index>
                 <!-- A manifest containing the OSGi metadata has been generated using the maven-bundle-plugin -->
                 <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-                <!-- Add the Maven coordinates in the manifest -->
-                <manifestEntries>
-                  <Maven-Group-Id>${project.groupId}</Maven-Group-Id>
-                  <Maven-Artifact-Id>${project.artifactId}</Maven-Artifact-Id>
-                  <Maven-Version>${project.version}</Maven-Version>
-                </manifestEntries>
               </archive>
             </configuration>
           </execution>
