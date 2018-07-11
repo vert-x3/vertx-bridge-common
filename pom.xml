@@ -9,13 +9,13 @@
   </parent>
 
   <artifactId>vertx-bridge-common</artifactId>
-  <version>3.5.3-SNAPSHOT</version>
+  <version>3.5.3</version>
 
   <name>Vert.x Bridge Common</name>
   <description>Vert.x 3 eventbus bridge common configuration</description>
 
   <properties>
-    <stack.version>3.5.3-SNAPSHOT</stack.version>
+    <stack.version>3.5.3</stack.version>
   </properties>
 
   <dependencyManagement>
