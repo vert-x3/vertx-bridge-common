@@ -1,5 +1,7 @@
 # vert.x bridge common
 
+[![Build Status](https://travis-ci.org/vert-x3/vertx-bridge-common.svg?branch=master)](https://travis-ci.org/vert-x3/vertx-bridge-common)
+
 This repository contains the common configuration for event bus bridges.
 
 ## Event Bus Bridges
