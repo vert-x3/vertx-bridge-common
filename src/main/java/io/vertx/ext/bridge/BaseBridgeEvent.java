@@ -3,7 +3,7 @@ package io.vertx.ext.bridge;
 import io.vertx.codegen.annotations.CacheReturn;
 import io.vertx.codegen.annotations.Fluent;
 import io.vertx.codegen.annotations.VertxGen;
-import io.vertx.core.Future;
+import io.vertx.core.Promise;
 import io.vertx.core.json.JsonObject;
 
 /**
@@ -14,7 +14,7 @@ import io.vertx.core.json.JsonObject;
  * @author <a href="http://tfox.org">Tim Fox</a>
  */
 @VertxGen
-public interface BaseBridgeEvent extends Future<Boolean> {
+public interface BaseBridgeEvent extends Promise<Boolean> {
 
   /**
    * @return  the type of the event
