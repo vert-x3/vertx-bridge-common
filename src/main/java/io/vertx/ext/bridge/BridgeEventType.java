@@ -51,6 +51,11 @@ public enum BridgeEventType {
   REGISTER,
 
   /**
+   * This event will occur when a client successfully registered. The raw message used for registration, notified with {@link BridgeEventType#REGISTER} event
+   */
+  REGISTERED,
+
+  /**
    * This event will occur when a client attempts to unregister a handler.
    */
   UNREGISTER
