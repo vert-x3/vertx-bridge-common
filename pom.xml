@@ -81,7 +81,7 @@
                 <processor>io.vertx.codegen.CodeGenProcessor</processor>
               </processors>
               <optionMap>
-                <outputDirectory>${project.basedir}/src/test</outputDirectory>
+                <codegen.output>${project.basedir}/src/test</codegen.output>
                 <codegen.output.data_object_converters>generated</codegen.output.data_object_converters>
               </optionMap>
               <defaultOutputDirectory>${project.build.directory}/generated-test-sources/annotations</defaultOutputDirectory>

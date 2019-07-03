@@ -33,7 +33,7 @@ public class MyBridgeOptionsConverter implements JsonCodec<MyBridgeOptions, Json
             java.util.ArrayList<io.vertx.ext.bridge.PermittedOptions> list =  new java.util.ArrayList<>();
             ((Iterable<Object>)member.getValue()).forEach( item -> {
               if (item instanceof JsonObject)
-                list.add(io.vertx.ext.bridge.PermittedOptionsConverter.INSTANCE.decode((JsonObject)item));
+                list.add(new io.vertx.ext.bridge.PermittedOptions((JsonObject)item));
             });
             obj.setInboundPermitteds(list);
           }
@@ -43,7 +43,7 @@ public class MyBridgeOptionsConverter implements JsonCodec<MyBridgeOptions, Json
             java.util.ArrayList<io.vertx.ext.bridge.PermittedOptions> list =  new java.util.ArrayList<>();
             ((Iterable<Object>)member.getValue()).forEach( item -> {
               if (item instanceof JsonObject)
-                list.add(io.vertx.ext.bridge.PermittedOptionsConverter.INSTANCE.decode((JsonObject)item));
+                list.add(new io.vertx.ext.bridge.PermittedOptions((JsonObject)item));
             });
             obj.setOutboundPermitteds(list);
           }
@@ -60,12 +60,12 @@ public class MyBridgeOptionsConverter implements JsonCodec<MyBridgeOptions, Json
     json.put("flag", obj.isFlag());
     if (obj.getInboundPermitteds() != null) {
       JsonArray array = new JsonArray();
-      obj.getInboundPermitteds().forEach(item -> array.add(io.vertx.ext.bridge.PermittedOptionsConverter.INSTANCE.encode(item)));
+      obj.getInboundPermitteds().forEach(item -> array.add(item.toJson()));
       json.put("inboundPermitteds", array);
     }
     if (obj.getOutboundPermitteds() != null) {
       JsonArray array = new JsonArray();
-      obj.getOutboundPermitteds().forEach(item -> array.add(io.vertx.ext.bridge.PermittedOptionsConverter.INSTANCE.encode(item)));
+      obj.getOutboundPermitteds().forEach(item -> array.add(item.toJson()));
       json.put("outboundPermitteds", array);
     }
   }
