@@ -4,21 +4,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.core.json.JsonArray;
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
-import io.vertx.core.spi.json.JsonCodec;
 
 /**
- * Converter and Codec for {@link io.vertx.ext.bridge.PermittedOptions}.
+ * Converter and mapper for {@link io.vertx.ext.bridge.PermittedOptions}.
  * NOTE: This class has been automatically generated from the {@link io.vertx.ext.bridge.PermittedOptions} original class using Vert.x codegen.
  */
-public class PermittedOptionsConverter implements JsonCodec<PermittedOptions, JsonObject> {
+public class PermittedOptionsConverter {
 
-  public static final PermittedOptionsConverter INSTANCE = new PermittedOptionsConverter();
-
-  @Override public JsonObject encode(PermittedOptions value) { return (value != null) ? value.toJson() : null; }
-
-  @Override public PermittedOptions decode(JsonObject value) { return (value != null) ? new PermittedOptions(value) : null; }
-
-  @Override public Class<PermittedOptions> getTargetClass() { return PermittedOptions.class; }
 
   public static void fromJson(Iterable<java.util.Map.Entry<String, Object>> json, PermittedOptions obj) {
     for (java.util.Map.Entry<String, Object> member : json) {

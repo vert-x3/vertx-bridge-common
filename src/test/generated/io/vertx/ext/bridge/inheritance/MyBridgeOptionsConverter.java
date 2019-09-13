@@ -4,21 +4,13 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.core.json.JsonArray;
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
-import io.vertx.core.spi.json.JsonCodec;
 
 /**
- * Converter and Codec for {@link io.vertx.ext.bridge.inheritance.MyBridgeOptions}.
+ * Converter and mapper for {@link io.vertx.ext.bridge.inheritance.MyBridgeOptions}.
  * NOTE: This class has been automatically generated from the {@link io.vertx.ext.bridge.inheritance.MyBridgeOptions} original class using Vert.x codegen.
  */
-public class MyBridgeOptionsConverter implements JsonCodec<MyBridgeOptions, JsonObject> {
+public class MyBridgeOptionsConverter {
 
-  public static final MyBridgeOptionsConverter INSTANCE = new MyBridgeOptionsConverter();
-
-  @Override public JsonObject encode(MyBridgeOptions value) { return (value != null) ? value.toJson() : null; }
-
-  @Override public MyBridgeOptions decode(JsonObject value) { return (value != null) ? new MyBridgeOptions(value) : null; }
-
-  @Override public Class<MyBridgeOptions> getTargetClass() { return MyBridgeOptions.class; }
 
   public static void fromJson(Iterable<java.util.Map.Entry<String, Object>> json, MyBridgeOptions obj) {
     for (java.util.Map.Entry<String, Object> member : json) {
