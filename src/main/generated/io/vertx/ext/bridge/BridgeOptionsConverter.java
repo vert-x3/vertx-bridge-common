@@ -20,7 +20,7 @@ public class BridgeOptionsConverter {
             java.util.ArrayList<io.vertx.ext.bridge.PermittedOptions> list =  new java.util.ArrayList<>();
             ((Iterable<Object>)member.getValue()).forEach( item -> {
               if (item instanceof JsonObject)
-                list.add(new io.vertx.ext.bridge.PermittedOptions((JsonObject)item));
+                list.add(new io.vertx.ext.bridge.PermittedOptions((io.vertx.core.json.JsonObject)item));
             });
             obj.setInboundPermitteds(list);
           }
@@ -30,7 +30,7 @@ public class BridgeOptionsConverter {
             java.util.ArrayList<io.vertx.ext.bridge.PermittedOptions> list =  new java.util.ArrayList<>();
             ((Iterable<Object>)member.getValue()).forEach( item -> {
               if (item instanceof JsonObject)
-                list.add(new io.vertx.ext.bridge.PermittedOptions((JsonObject)item));
+                list.add(new io.vertx.ext.bridge.PermittedOptions((io.vertx.core.json.JsonObject)item));
             });
             obj.setOutboundPermitteds(list);
           }

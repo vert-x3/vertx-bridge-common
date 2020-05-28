@@ -12,7 +12,5 @@
 |===
 ^|Name | Type ^| Description
 |[[flag]]`@flag`|`Boolean`|-
-|[[inboundPermitteds]]`@inboundPermitteds`|`Array of link:dataobjects.html#PermittedOptions[PermittedOptions]`|-
-|[[outboundPermitteds]]`@outboundPermitteds`|`Array of link:dataobjects.html#PermittedOptions[PermittedOptions]`|-
 |===
 
