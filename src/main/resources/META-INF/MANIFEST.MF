@@ -1,2 +1,2 @@
-Automatic-Module-Name: io.vertx.bridge.common
+Automatic-Module-Name: io.vertx.eventbusbridge.common
 
