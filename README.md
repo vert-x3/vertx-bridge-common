@@ -1,6 +1,6 @@
 # vert.x bridge common
 
-[![Build Status](https://travis-ci.org/vert-x3/vertx-bridge-common.svg?branch=master)](https://travis-ci.org/vert-x3/vertx-bridge-common)
+[![Build Status](https://github.com/vert-x3/vertx-bridge-common/workflows/CI/badge.svg?branch=3.9)](https://github.com/vert-x3/vertx-bridge-common/actions?query=workflow%3ACI)
 
 This repository contains the common configuration for event bus bridges.
 
