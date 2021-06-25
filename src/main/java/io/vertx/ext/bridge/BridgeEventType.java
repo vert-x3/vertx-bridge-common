@@ -31,6 +31,11 @@ public enum BridgeEventType {
   SOCKET_PING,
 
   /**
+   * This event will occur when SockJS socket exception handler is triggered.
+   */
+  SOCKET_EXCEPTION,
+
+  /**
    * This event will occur when a message is attempted to be sent from the client to the server.
    */
   SEND,
