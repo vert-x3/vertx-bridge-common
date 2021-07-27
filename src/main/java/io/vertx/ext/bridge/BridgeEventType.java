@@ -31,6 +31,11 @@ public enum BridgeEventType {
   SOCKET_PING,
 
   /**
+   * This event will occur when an underlying transport errors.
+   */
+  SOCKET_ERROR,
+
+  /**
    * This event will occur when a message is attempted to be sent from the client to the server.
    */
   SEND,
