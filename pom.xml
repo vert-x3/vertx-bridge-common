@@ -1,140 +1,259 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <parent>
-    <groupId>io.vertx</groupId>
-    <artifactId>vertx-ext-parent</artifactId>
-    <version>38</version>
-  </parent>
-
-  <artifactId>vertx-bridge-common</artifactId>
-  <version>3.9.9-SNAPSHOT</version>
-
-  <name>Vert.x Bridge Common</name>
-  <description>Vert.x 3 eventbus bridge common configuration</description>
-
-  <properties>
-    <stack.version>3.9.9-SNAPSHOT</stack.version>
-  </properties>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
+      
+    <modelVersion>4.0.0</modelVersion>
+      
+    <parent>
+            
         <groupId>io.vertx</groupId>
-        <artifactId>vertx-dependencies</artifactId>
-        <version>${stack.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+            
+        <artifactId>vertx-ext-parent</artifactId>
+            
+        <version>38</version>
+          
+    </parent>
+      
+    <artifactId>vertx-bridge-common</artifactId>
+      
+    <version>3.9.9</version>
+      
+    <name>Vert.x Bridge Common</name>
+      
+    <description>Vert.x 3 eventbus bridge common configuration</description>
+      
+    <properties>
+            
+        <stack.version>3.9.9</stack.version>
+          
+    </properties>
+      
+    <dependencyManagement>
+            
+        <dependencies>
+                  
+            <dependency>
+                        
+                <groupId>io.vertx</groupId>
+                        
+                <artifactId>vertx-dependencies</artifactId>
+                        
+                <version>${stack.version}</version>
+                        
+                <type>pom</type>
+                        
+                <scope>import</scope>
+                      
+            </dependency>
+                
+        </dependencies>
+          
+    </dependencyManagement>
+      
+    <dependencies>
+            
+        <dependency>
+                  
+            <groupId>io.vertx</groupId>
+                  
+            <artifactId>vertx-codegen</artifactId>
+                  
+            <optional>true</optional>
+                
+        </dependency>
+            
+        <dependency>
+                  
+            <groupId>io.vertx</groupId>
+                  
+            <artifactId>vertx-docgen</artifactId>
+                  
+            <optional>true</optional>
+                
+        </dependency>
+            
+        <dependency>
+                  
+            <groupId>io.vertx</groupId>
+                  
+            <artifactId>vertx-codetrans</artifactId>
+                  
+            <optional>true</optional>
+                
+        </dependency>
+            
+        <dependency>
+                  
+            <groupId>junit</groupId>
+                  
+            <artifactId>junit</artifactId>
+                  
+            <version>4.13.1</version>
+                  
+            <scope>test</scope>
+                
+        </dependency>
+            
+        <dependency>
+                  
+            <groupId>org.assertj</groupId>
+                  
+            <artifactId>assertj-core</artifactId>
+                  
+            <version>3.3.0</version>
+                  
+            <scope>test</scope>
+                
+        </dependency>
+          
     </dependencies>
-  </dependencyManagement>
-
-  <dependencies>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-codegen</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-docgen</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-codetrans</artifactId>
-      <optional>true</optional>
-    </dependency>
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <version>3.3.0</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.bsc.maven</groupId>
-        <artifactId>maven-processor-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>generate-test-sources</id>
-            <goals>
-              <goal>process-test</goal>
-            </goals>
-            <phase>generate-test-sources</phase>
-            <configuration>
-              <systemProperties>
-                <java.util.logging.SimpleFormatter.format>%4$s: %3$s - %5$s %6$s%n</java.util.logging.SimpleFormatter.format>
-              </systemProperties>
-              <processors>
-                <processor>io.vertx.codegen.CodeGenProcessor</processor>
-              </processors>
-              <optionMap>
-                <outputDirectory>${project.basedir}/src/test</outputDirectory>
-                <codegen.output.data_object_converters>generated</codegen.output.data_object_converters>
-              </optionMap>
-              <defaultOutputDirectory>${project.build.directory}/generated-test-sources/annotations</defaultOutputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>add-test-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-test-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>${project.basedir}/src/test/generated</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>default-jar</id>
-            <configuration>
-              <archive>
-                <!-- A manifest containing the OSGi metadata has been generated using the maven-bundle-plugin -->
-                <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-              </archive>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>biz.aQute.bnd</groupId>
-        <artifactId>bnd-maven-plugin</artifactId>
-        <version>3.2.0</version>
-        <executions>
-          <execution>
-            <id>default-bnd-process</id>
-            <goals>
-              <goal>bnd-process</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <bnd><![CDATA[
+      
+    <build>
+            
+        <plugins>
+                  
+            <plugin>
+                        
+                <groupId>org.bsc.maven</groupId>
+                        
+                <artifactId>maven-processor-plugin</artifactId>
+                        
+                <executions>
+                              
+                    <execution>
+                                    
+                        <id>generate-test-sources</id>
+                                    
+                        <goals>
+                                          
+                            <goal>process-test</goal>
+                                        
+                        </goals>
+                                    
+                        <phase>generate-test-sources</phase>
+                                    
+                        <configuration>
+                                          
+                            <systemProperties>
+                                                
+                                <java.util.logging.SimpleFormatter.format>%4$s: %3$s - %5$s %6$s%n</java.util.logging.SimpleFormatter.format>
+                                              
+                            </systemProperties>
+                                          
+                            <processors>
+                                                
+                                <processor>io.vertx.codegen.CodeGenProcessor</processor>
+                                              
+                            </processors>
+                                          
+                            <optionMap>
+                                                
+                                <outputDirectory>${project.basedir}/src/test</outputDirectory>
+                                                
+                                <codegen.output.data_object_converters>generated</codegen.output.data_object_converters>
+                                              
+                            </optionMap>
+                                          
+                            <defaultOutputDirectory>${project.build.directory}/generated-test-sources/annotations</defaultOutputDirectory>
+                                        
+                        </configuration>
+                                  
+                    </execution>
+                            
+                </executions>
+                      
+            </plugin>
+                  
+            <plugin>
+                        
+                <groupId>org.codehaus.mojo</groupId>
+                        
+                <artifactId>build-helper-maven-plugin</artifactId>
+                        
+                <executions>
+                              
+                    <execution>
+                                    
+                        <id>add-test-source</id>
+                                    
+                        <phase>generate-sources</phase>
+                                    
+                        <goals>
+                                          
+                            <goal>add-test-source</goal>
+                                        
+                        </goals>
+                                    
+                        <configuration>
+                                          
+                            <sources>
+                                                
+                                <source>${project.basedir}/src/test/generated</source>
+                                              
+                            </sources>
+                                        
+                        </configuration>
+                                  
+                    </execution>
+                            
+                </executions>
+                      
+            </plugin>
+                  
+            <plugin>
+                        
+                <artifactId>maven-jar-plugin</artifactId>
+                        
+                <executions>
+                              
+                    <execution>
+                                    
+                        <id>default-jar</id>
+                                    
+                        <configuration>
+                                          
+                            <archive>
+                                                
+                                <!-- A manifest containing the OSGi metadata has been generated using the maven-bundle-plugin -->
+                                                
+                                <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                                              
+                            </archive>
+                                        
+                        </configuration>
+                                  
+                    </execution>
+                            
+                </executions>
+                      
+            </plugin>
+                  
+            <plugin>
+                        
+                <groupId>biz.aQute.bnd</groupId>
+                        
+                <artifactId>bnd-maven-plugin</artifactId>
+                        
+                <version>3.2.0</version>
+                        
+                <executions>
+                              
+                    <execution>
+                                    
+                        <id>default-bnd-process</id>
+                                    
+                        <goals>
+                                          
+                            <goal>bnd-process</goal>
+                                        
+                        </goals>
+                                  
+                    </execution>
+                            
+                </executions>
+                        
+                <configuration>
+                              
+                    <bnd><![CDATA[
           Import-Package: \
             groovy.lang.*;resolution:=optional,\
             org.codehaus.groovy.*;resolution:=optional,\
@@ -152,8 +271,13 @@
             *
           -exportcontents: *
         ]]></bnd>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+                            
+                </configuration>
+                      
+            </plugin>
+                
+        </plugins>
+          
+    </build>
+    
 </project>
