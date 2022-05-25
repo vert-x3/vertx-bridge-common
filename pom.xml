@@ -9,13 +9,13 @@
   </parent>
 
   <artifactId>vertx-bridge-common</artifactId>
-  <version>4.3.1-SNAPSHOT</version>
+  <version>4.3.1</version>
 
   <name>Vert.x Bridge Common</name>
   <description>Vert.x 3 eventbus bridge common configuration</description>
 
   <properties>
-    <stack.version>4.3.1-SNAPSHOT</stack.version>
+    <stack.version>4.3.1</stack.version>
     <jar.manifest>${project.basedir}/src/main/resources/META-INF/MANIFEST.MF</jar.manifest>
   </properties>
 
