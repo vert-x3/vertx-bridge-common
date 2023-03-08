@@ -1,6 +1,7 @@
 # vert.x bridge common
 
-[![Build Status](https://github.com/vert-x3/vertx-bridge-common/workflows/CI/badge.svg?branch=master)](https://github.com/vert-x3/vertx-bridge-common/actions?query=workflow%3ACI)
+[![Build Status (5.x)](https://github.com/vert-x3/vertx-bridge-common/actions/workflows/ci-5.x.yml/badge.svg)](https://github.com/vert-x3/vertx-bridge-common/actions/workflows/ci-5.x.yml)
+[![Build Status (4.x)](https://github.com/vert-x3/vertx-bridge-common/actions/workflows/ci-4.x.yml/badge.svg)](https://github.com/vert-x3/vertx-bridge-common/actions/workflows/ci-4.x.yml)
 
 This repository contains the common configuration for event bus bridges.
 
