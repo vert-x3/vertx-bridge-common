@@ -15,7 +15,7 @@
       
     <artifactId>vertx-bridge-common</artifactId>
       
-    <version>3.9.16</version>
+    <version>3.9.17-SNAPSHOT</version>
       
     <name>Vert.x Bridge Common</name>
       
@@ -23,7 +23,7 @@
       
     <properties>
             
-        <stack.version>3.9.16</stack.version>
+        <stack.version>3.9.17-SNAPSHOT</stack.version>
           
     </properties>
       
