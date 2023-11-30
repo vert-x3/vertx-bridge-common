@@ -17,6 +17,7 @@
 package io.vertx.ext.bridge;
 
 import io.vertx.codegen.annotations.DataObject;
+import io.vertx.codegen.json.annotations.JsonGen;
 import io.vertx.core.json.JsonObject;
 
 import java.util.ArrayList;
@@ -27,7 +28,8 @@ import java.util.List;
  *
  * @author <a href="http://escoffier.me">Clement Escoffier</a>
  */
-@DataObject(generateConverter = true)
+@DataObject
+@JsonGen(publicConverter = false)
 public class BridgeOptions {
 
   private List<PermittedOptions> inboundPermitted = new ArrayList<>();
