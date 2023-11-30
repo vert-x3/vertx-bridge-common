@@ -1,13 +1,15 @@
 package io.vertx.ext.bridge.inheritance;
 
 import io.vertx.codegen.annotations.DataObject;
+import io.vertx.codegen.annotations.JsonGen;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.bridge.BridgeOptions;
 
 /**
  * @author <a href="http://escoffier.me">Clement Escoffier</a>
  */
-@DataObject(generateConverter = true, inheritConverter = true)
+@DataObject
+@JsonGen(publicConverter = false, inheritConverter = true)
 public class MyBridgeOptions extends BridgeOptions {
 
   private boolean flag;
