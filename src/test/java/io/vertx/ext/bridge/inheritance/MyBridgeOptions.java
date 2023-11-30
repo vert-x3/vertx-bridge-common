@@ -9,7 +9,7 @@ import io.vertx.ext.bridge.BridgeOptions;
  * @author <a href="http://escoffier.me">Clement Escoffier</a>
  */
 @DataObject
-@JsonGen(publicConverter = false)
+@JsonGen(publicConverter = false, inheritConverter = true)
 public class MyBridgeOptions extends BridgeOptions {
 
   private boolean flag;
