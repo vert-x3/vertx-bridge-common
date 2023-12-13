@@ -17,7 +17,7 @@ public class BridgeOptionsConverter {
   private static final Base64.Decoder BASE64_DECODER = JsonUtil.BASE64_DECODER;
   private static final Base64.Encoder BASE64_ENCODER = JsonUtil.BASE64_ENCODER;
 
-  public static void fromJson(Iterable<java.util.Map.Entry<String, Object>> json, BridgeOptions obj) {
+   static void fromJson(Iterable<java.util.Map.Entry<String, Object>> json, BridgeOptions obj) {
     for (java.util.Map.Entry<String, Object> member : json) {
       switch (member.getKey()) {
         case "inboundPermitteds":
@@ -44,11 +44,11 @@ public class BridgeOptionsConverter {
     }
   }
 
-  public static void toJson(BridgeOptions obj, JsonObject json) {
+   static void toJson(BridgeOptions obj, JsonObject json) {
     toJson(obj, json.getMap());
   }
 
-  public static void toJson(BridgeOptions obj, java.util.Map<String, Object> json) {
+   static void toJson(BridgeOptions obj, java.util.Map<String, Object> json) {
     if (obj.getInboundPermitteds() != null) {
       JsonArray array = new JsonArray();
       obj.getInboundPermitteds().forEach(item -> array.add(item.toJson()));
