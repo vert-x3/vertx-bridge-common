@@ -4,7 +4,7 @@
 
   <parent>
     <groupId>io.vertx</groupId>
-    <artifactId>vertx-parent</artifactId>
+    <artifactId>vertx5-parent</artifactId>
     <version>3</version>
   </parent>
 
