@@ -1,6 +1,8 @@
-package io.vertx.ext.bridge;
+package io.vertx.ext.bridge.tests;
 
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.bridge.BridgeOptions;
+import io.vertx.ext.bridge.PermittedOptions;
 import org.junit.Test;
 
 import java.util.ArrayList;
