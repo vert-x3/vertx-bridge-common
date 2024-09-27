@@ -80,11 +80,6 @@
                     <artifactId>vertx-codegen</artifactId>
                     <classifier>processor</classifier>
                   </annotationProcessorPath>
-                  <annotationProcessorPath>
-                    <groupId>io.vertx</groupId>
-                    <artifactId>vertx-docgen-processor</artifactId>
-                    <classifier>processor</classifier>
-                  </annotationProcessorPath>
                 </annotationProcessorPaths>
               </configuration>
             </execution>
