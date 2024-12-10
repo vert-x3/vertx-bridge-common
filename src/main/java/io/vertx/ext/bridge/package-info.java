@@ -18,7 +18,7 @@
 /**
  * @author <a href="http://escoffier.me">Clement Escoffier</a>
  */
-@ModuleGen(name = "vertx-bridge-common", groupPackage = "io.vertx", useFutures = true)
+@ModuleGen(name = "vertx-bridge-common", groupPackage = "io.vertx")
 package io.vertx.ext.bridge;
 
 import io.vertx.codegen.annotations.ModuleGen;
