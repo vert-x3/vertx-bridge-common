@@ -1,6 +1,6 @@
 # vert.x bridge common
 
-Starting Vert.x 5.1, this repository is moved to https://github.com/eclipse-vertx/vertx-eventbus-bridges/tree/main/vertx-eventbus-bridges-common
+Starting Vert.x 5.1, this repository is moved to https://github.com/eclipse-vertx/vertx-eventbus-bridges/tree/main/vertx-eventbus-bridge-common
 
 For previous versions check:
 
